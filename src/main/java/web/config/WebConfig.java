@@ -29,6 +29,7 @@ public class WebConfig implements WebMvcConfigurer {
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/pages/");
         templateResolver.setSuffix(".html");
+
         return templateResolver;
     }
 
@@ -44,6 +45,8 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
+
+
         resolver.setTemplateEngine(templateEngine());
         registry.viewResolver(resolver);
     }
